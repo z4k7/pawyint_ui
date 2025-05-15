@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Bell, Box, CreditCard, Heart, LucideAngularModule, MapPin, Package, Settings, User } from 'lucide-angular';
+import { Product } from '../../app.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,6 +9,7 @@ import { Bell, Box, CreditCard, Heart, LucideAngularModule, MapPin, Package, Set
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+
   readonly User = User
   readonly Order = Package
   readonly Heart = Heart
