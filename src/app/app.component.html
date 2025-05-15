@@ -1,0 +1,19 @@
+<app-header/>
+
+<section  class="flex flex-col mx-auto w-10/12">
+  <div class="py-4" >
+    <h1 class="text-2xl">My Profile</h1>
+  </div>
+ <div class="flex mx-auto gap-8">
+   <aside class="w-1/5" >
+    <app-sidebar/>
+  </aside>
+  <main class="w-4/5 flex gap-8 flex-wrap">
+    @for(product of products() || []; track $index) {
+
+      <app-product-card [product]="product"/>
+    }
+  </main>
+ </div>
+</section>
+<app-footer/>
