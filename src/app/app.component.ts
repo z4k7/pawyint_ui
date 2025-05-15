@@ -24,6 +24,7 @@ export class AppComponent implements OnInit{
 
   private http = inject(HttpClient);
   products = signal<Product[]>([]);
+  loaded=signal(false)
 
   ngOnInit(): void {
     this.http
@@ -32,8 +33,12 @@ export class AppComponent implements OnInit{
       ) .pipe(map((res) => res.data))
       .subscribe({
         next: (resData) => {
+          this.loaded.set(false)
           this.products.set(resData);
           console.log('Products', this.products());
+          setTimeout(() => {
+            this.loaded.set(true)
+          }, 2000);
         },
       });
   }
